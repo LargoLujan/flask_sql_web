@@ -16,3 +16,4 @@ class Tasks(db.Base):
     def __str__(self):
         return "Tarea: Nº {} = {} -> {})".format(self.id_task, self.content, self.done)
 
+
