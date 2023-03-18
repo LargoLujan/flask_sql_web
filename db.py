@@ -14,3 +14,4 @@ session = Session()
 # Ahora vamos al fichero models.poy y en los modelos (clases) donde queremos que se transformen en tablas,
 # le añadiremos esta variable, y esto se encargara de mapear y vincular la clase a la tabla
 Base = declarative_base()
+
