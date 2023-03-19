@@ -1,11 +1,8 @@
 body {
-  background: #C9D6FF;
-  background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);
-
-  background: linear-gradient(to right, #E2E2E2, #C9D6FF);
-
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
 }
 
-.titulo{
-    font-family: 'Permanent Market', cursive;
+h1.titulo {
+  font-family: 'Permanent Marker', cursive;
+  color: #333; /* Utilice un color legible */
 }

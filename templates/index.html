@@ -2,31 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="App Gestor de Tareas">
+    <meta name="keywords" content="app, tareas, gestor">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Gestor de Tareas</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npn/bootswatch@4.5.2/dist/sketchy/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sketchy/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.google.com">
     <link rel="preconnect" href="https://font.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Market&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
 </head>
 <body>
-    <main>
+    <header>
         <h1 class="display-4 text-center mt-4 titulo">App Gestor de Tareas.</h1>
-        <div class="row">
-            <div class="coll-md-4 offset-md4 my-auto">
-                <div class="card">
-                    <div class="card-header">
-
-                    </div>
-                    <div class="card-body">
-
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 offset-md-4 my-auto">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Header de la tarjeta</h2>
+                            </div>
+                            <div class="card-body">
+                                <p>Contenido de la tarjeta</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
-
-
+    <footer>
+        <p>Sobre nosotros y otros enlaces</p>
+    </footer>
 </body>
 </html>
 
