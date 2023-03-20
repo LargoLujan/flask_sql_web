@@ -19,11 +19,11 @@
                     <div class="col-md-4 offset-md-4 my-auto">
                         <div class="card">
                             <div class="card-header">
-                                <form id="create-task-form">
+                                <form action="/create_task" method="post">
                                     <div class="input-group">
                                         <input type="text" name="content_task" placeholder="Tarea" class="form-control" autofocus>
                                     </div>
-                                    <button type="button" class="btn btn-primary btn-block" onclick="createTask()">Guardar</button>
+                                    <button type="submit" class="btn btn-primary btn-block">Guardar</button>
                                 </form>
                             </div>
                             <div class="card-body">
