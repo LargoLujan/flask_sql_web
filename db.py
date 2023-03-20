@@ -4,6 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 engine = create_engine('sqlite:///database/tasks.db')
+connect_args = {'check_same_thread': False}
 # Advertencia, crear el engine no conecta inmediatamente a la base de datos eso lo hacemos más adelante
 
 # Ahora creamos la sesión lo que nos permite realizar transacciones (operaciones) dentro de nuestra BD
