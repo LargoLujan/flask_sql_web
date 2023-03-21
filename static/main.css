@@ -7,3 +7,8 @@ body {
 .titulo {
   font-family: 'Permanent Marker', cursive;
 }
+
+.task_done {
+    text-decoration: line-through;
+    color: #cfcfcf;
+}

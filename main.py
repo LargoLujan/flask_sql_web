@@ -30,8 +30,8 @@ def delete(id):
 
 @app.route("/done-task/<id>")
 def done(id):
-    task = db.session.query(Tasks).filter_by(id_task=id).first()
-    task.done = not task.done
+    task = db.session.query(Tasks).filter_by(id_task=int(id)).first()
+    task.done = not(task.done)
     db.session.commit()
     return redirect(url_for("home_web"))
 
