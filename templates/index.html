@@ -27,7 +27,19 @@
                                 </form>
                             </div>
                             <div class="card-body">
-                                <p>Contenido de la tarjeta</p>
+                                <ul>
+                                    {% for task in task_list %}
+                                    <li>
+                                        {{ task.content }}
+                                        <a href="..." style="text-decoration:none" class="btn btn-primary btn-sm">
+                                            Hecho
+                                        </a>
+                                        <a href="..." style="text-decoration:none" class="btn btn-danger btn-sm">
+                                            Eliminar
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
                     </div>

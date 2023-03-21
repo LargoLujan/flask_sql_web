@@ -3,7 +3,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-engine = create_engine('sqlite:///database/tasks.db')
+engine = create_engine('sqlite:///database/tasks.db', connect_args={"check_same_thread": False})
+# connect_args indica que las fuciones en segundo plano para que las funciones no tenga problemas con el html
 connect_args = {'check_same_thread': False}
 # Advertencia, crear el engine no conecta inmediatamente a la base de datos eso lo hacemos más adelante
 
