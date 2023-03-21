@@ -31,10 +31,10 @@
                                     {% for task in task_list %}
                                     <li>
                                         {{ task.content }}
-                                        <a href="..." style="text-decoration:none" class="btn btn-primary btn-sm">
+                                        <a href="/done-task/{{task.id_task}}" style="text-decoration:none" class="btn btn-primary btn-sm">
                                             Hecho
                                         </a>
-                                        <a href="..." style="text-decoration:none" class="btn btn-danger btn-sm">
+                                        <a href="/delete-task/{{task.id_task}}" style="text-decoration:none" class="btn btn-danger btn-sm">
                                             Eliminar
                                         </a>
                                     </li>

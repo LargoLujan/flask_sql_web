@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for
 import db
 from models import Tasks
 
-
 app = Flask(__name__)  # En app se encuentra nuestro servidor web de Flask
 
 
@@ -20,6 +19,22 @@ def create():
     db.session.add(task)
     db.session.commit()
     return redirect(url_for("home_web"))
+
+
+@app.route("/delete-task/<id>")
+def delete(id):
+    task = db.session.query(Tasks).filter_by(id_task=id).delete()
+    db.session.commit()
+    return redirect(url_for("home_web"))
+
+
+@app.route("/done-task/<id>")
+def done(id):
+    task = db.session.query(Tasks).filter_by(id_task=id).first()
+    task.done = not task.done
+    db.session.commit()
+    return redirect(url_for("home_web"))
+
 
 if __name__ == "__main__":
     db.Base.metadata.create_all(db.engine)
