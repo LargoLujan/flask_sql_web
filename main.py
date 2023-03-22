@@ -1,8 +1,9 @@
+from _curses import flash
 from datetime import datetime
-
+from flask_login import login_user, logout_user, login_required
 from flask import Flask, render_template, request, redirect, url_for
 import db
-from models import Tasks
+from models import Tasks, Access
 
 app = Flask(__name__)  # En app se encuentra nuestro servidor web de Flask
 
@@ -42,6 +43,30 @@ def done(id):
 def tasks_by_category(category):
     category_tasks = db.session.query(Tasks).filter_by(category=category).all()
     return render_template("index.html", task_list=category_tasks)
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+
+    if request.method == 'POST':
+        user = User.query.filter_by(username=request.form['username']).first()
+        if user is None or not check_password_hash(user.password, request.form['password']):
+            flash('Usuario o contraseña inválido')
+            return redirect(url_for('login'))
+        login_user(user)
+        return redirect(url_for('index'))
+
+    return render_template('login.html')
+
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
 
 if __name__ == "__main__":
     db.Base.metadata.create_all(db.engine)
