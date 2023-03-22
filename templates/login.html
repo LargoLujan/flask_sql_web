@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.google.com">
+    <link rel="preconnect" href="https://font.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integrity="sha384-X8QTME3FCg1DLb58++1PvsjbQoCT9bp3MsUU3gbBIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <main>
+            <h1 class="display-4 text-center mt-4 titulo custom-style">Inicio de sesión</h1>
+            <section>
+                <div class="container my-4 mx-auto max-w-80">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 offset-md-4 my-auto">
+                            <div class="card">
+                                <div class="card-header">
+                                    <form action="/login" method="POST">
+                                        <div class="form-group text-center">
+                                            <label class="font-weight-bold" for="username">Usuario</label>
+                                            <input type="text" name="username" id="username" placeholder="Usuario" class="form-control" autofocus>
+                                        </div>
+                                        <div class="form-group text-center">
+                                            <label class="font-weight-bold" for="password">Contraseña</label>
+                                            <input type="password" name="password" id="password" placeholder="Contraseña" class="form-control">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </header>
+</body>
+</html>
