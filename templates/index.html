@@ -22,18 +22,28 @@
                         <div class="card">
                             <div class="card-header">
                                 <form action="/create_task" method="post">
-                                    <div class="form-group text-center">
-                                        <label class="font-weight-bold" for="content_task">Tarea</label>
-                                        <input type="text" name="content_task" placeholder="Tarea" class="form-control" autofocus>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group text-center">
+                                                <label class="font-weight-bold" for="content_task">Tarea</label>
+                                                <input type="text" name="content_task" id="content_task" placeholder="Tarea" class="form-control" autofocus>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group text-center">
+                                                <label class="font-weight-bold" for="category">Categoría</label>
+                                                <select class="form-control" name="category" id="category">
+                                                    <option value="familia">Familia</option>
+                                                    <option value="trabajo">Trabajo</option>
+                                                    <option value="ocio">Ocio</option>
+                                                    <option value="academico">Académico</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group text-center">
-                                        <label class="font-weight-bold" for="category">Categoría</label>
-                                        <select class="form-control" name="category" id="category">
-                                            <option value="familia">Familia</option>
-                                            <option value="trabajo">Trabajo</option>
-                                            <option value="ocio">Ocio</option>
-                                            <option value="academico">Académico</option>
-                                        </select>
+                                        <label class="font-weight-bold" for="due_date">Fecha límite</label>
+                                        <input type="date" name="due_date" id="due_date" class="form-control">
                                     </div>
                                     <button type="submit" class="btn btn-primary btn-block">Guardar</button>
                                 </form>
@@ -43,7 +53,7 @@
                                     {% for task in task_list %}
                                     <li class="list-group-item">
                                         <span class="{% if task.done==true %} task_done {% endif %}">
-                                        {{ task.content }} ({{ task.category }})
+                                        {{ task.content }} ({{ task.category }}) - Fecha límite: {{ task.due_date.strftime("%Y-%m-%d") }}
                                         </span>
                                         <a href="/done-task/{{task.id_task}}" style="text-decoration:none">-->
                                             <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="green" class="bi bi-check2-square" viewBox="0 0 16 16">
