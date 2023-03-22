@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from flask import Flask, render_template, request, redirect, url_for
 import db
 from models import Tasks
@@ -15,7 +17,8 @@ def home_web():
 
 @app.route("/create_task", methods=["POST"])
 def create():
-    task = Tasks(content=request.form["content_task"], done=False, category=request.form["category"])
+    due_date = datetime.strptime(request.form["due_date"], "%Y-%m-%d").date()
+    task = Tasks(content=request.form["content_task"], done=False, category=request.form["category"], due_date=due_date)
     db.session.add(task)
     db.session.commit()
     return redirect(url_for("home_web"))
