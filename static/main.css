@@ -2,6 +2,7 @@ body {
   background: #C9D6FF;
   background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);
   background: linear-gradient(to right, #E2E2E2, #C9D6FF);
+
 }
 
 .titulo {
@@ -12,3 +13,11 @@ body {
     text-decoration: line-through;
     color: #cfcfcf;
 }
+.custom-style {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+    }

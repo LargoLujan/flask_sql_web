@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>App Gestor de Tareas</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sketchy/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.google.com">
     <link rel="preconnect" href="https://font.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integruty="sha384-X8QTME3FCg1DLb58++1PvsjbQoCT9bp3MsUU3gbBIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integrity="sha384-X8QTME3FCg1DLb58++1PvsjbQoCT9bp3MsUU3gbBIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous">
+
 </head>
 <body>
     <header>
         <main>
-            <h1 class="display-4 text-center mt-4 titulo">App Gestor de Tareas.</h1>
+            <h1 class="display-4 text-center mt-4 titulo custom-style">App Gestor de Tareas</h1>
         <section>
             <div class="container">
                 <div class="row">
@@ -21,11 +22,13 @@
                         <div class="card">
                             <div class="card-header">
                                 <form action="/create_task" method="post">
-                                    <div class="input-group mb-3">
+                                    <div class="form-group text-center">
+                                        <label class="font-weight-bold" for="content_task">Tarea</label>
                                         <input type="text" name="content_task" placeholder="Tarea" class="form-control" autofocus>
                                     </div>
-                                    <div class="input-group mb-3">
-                                        <select class="form-control" name="category">
+                                    <div class="form-group text-center">
+                                        <label class="font-weight-bold" for="category">Categoría</label>
+                                        <select class="form-control" name="category" id="category">
                                             <option value="familia">Familia</option>
                                             <option value="trabajo">Trabajo</option>
                                             <option value="ocio">Ocio</option>
@@ -42,7 +45,7 @@
                                         <span class="{% if task.done==true %} task_done {% endif %}">
                                         {{ task.content }} ({{ task.category }})
                                         </span>
-                                        <a href="/done-task/{{task.id_task}}" style="text-decoration:none">
+                                        <a href="/done-task/{{task.id_task}}" style="text-decoration:none">-->
                                             <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="green" class="bi bi-check2-square" viewBox="0 0 16 16">
                                                 <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
                                                 <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
@@ -66,6 +69,78 @@
     </main>
 </body>
 </html>
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>App Gestor de Tareas</title>-->
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sketchy/bootstrap.min.css">-->
+<!--    <link rel="preconnect" href="https://fonts.google.com">-->
+<!--    <link rel="preconnect" href="https://font.gstatic.com" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">-->
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integruty="sha384-X8QTME3FCg1DLb58++1PvsjbQoCT9bp3MsUU3gbBIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <header>-->
+<!--        <main>-->
+<!--            <h1 class="display-4 text-center mt-4 titulo">App Gestor de Tareas.</h1>-->
+<!--        <section>-->
+<!--            <div class="container">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-md-4 offset-md-4 my-auto">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                <form action="/create_task" method="post">-->
+<!--                                    <div class="input-group mb-3">-->
+<!--                                        <input type="text" name="content_task" placeholder="Tarea" class="form-control" autofocus>-->
+<!--                                    </div>-->
+<!--                                    <div class="input-group mb-3">-->
+<!--                                        <select class="form-control" name="category">-->
+<!--                                            <option value="familia">Familia</option>-->
+<!--                                            <option value="trabajo">Trabajo</option>-->
+<!--                                            <option value="ocio">Ocio</option>-->
+<!--                                            <option value="academico">Académico</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                    <button type="submit" class="btn btn-primary btn-block">Guardar</button>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                            <div class="card-body">-->
+<!--                                <ul class="list-group">-->
+<!--                                    {% for task in task_list %}-->
+<!--                                    <li class="list-group-item">-->
+<!--                                        <span class="{% if task.done==true %} task_done {% endif %}">-->
+<!--                                        {{ task.content }} ({{ task.category }})-->
+<!--                                        </span>-->
+<!--                                        <a href="/done-task/{{task.id_task}}" style="text-decoration:none">-->
+<!--                                            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="green" class="bi bi-check2-square" viewBox="0 0 16 16">-->
+<!--                                                <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>-->
+<!--                                                <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>-->
+<!--                                            </svg>-->
+<!--                                        </a>-->
+<!--                                        <a href="/delete-task/{{task.id_task}}" style="text-decoration:none">-->
+<!--                                            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="red" class="bi bi-trash" viewBox="0 0 16 16">-->
+<!--                                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>-->
+<!--                                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>-->
+<!--                                            </svg>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    {% endfor %}-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+<!--    </main>-->
+<!--</body>-->
+<!--</html>-->
 
 
 
