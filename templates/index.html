@@ -69,7 +69,7 @@
                                                             </span>
                                                         </td>
                                                             <td style="width: 30%;">{{ task.category }}</td>
-                                                            <td style="width: 30%;">{{ task.due_date.strftime("%d-%m-%Y") if task.due_date else "" }}</td>
+                                                            <td style="width: 30%;">{{ task.due_date.strftime("%Y-%m-%d") if task.due_date else "" }}</td>
                                                             <td style="width: 10%;">
                                                                 <a href="/done-task/{{task.id_task}}" style="text-decoration:none">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="green" class="bi bi-check2-square" viewBox="0 0 16 16">

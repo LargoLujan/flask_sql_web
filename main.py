@@ -17,8 +17,8 @@ def home_web():
 
 @app.route("/create_task", methods=["POST"])  # Ruta para crear una tarea nueva
 def create():
-    due_date = datetime.strptime(request.form["due_date"], "%d-%m-%Y").date()  # Convertimos la fecha a formato datetime
-    task = Tasks(content=request.form["content_task"], done=False, category=request.form["category"])  # Creamos una tarea nueva
+    due_date = datetime.datetime.strptime(request.form["due_date"], "%Y-%m-%d").date()  # Convertimos la fecha a formato datetime
+    task = Tasks(content=request.form["content_task"], done=False, category=request.form["category"], due_date=due_date)  # Creamos una tarea nueva
     db.session.add(task)  # La agregamos a la base de datos
     db.session.commit()  # ¡Guardamos los cambios!
     return redirect(url_for("home_web"))  # Redirigimos a la página principal
