@@ -105,8 +105,6 @@ flask_sql_web/
     └── main.css             # Copy of an earlier stylesheet, not used by the app
 ```
 
-The repository also contains a committed `venv` folder (a Windows virtual environment); you should create your own environment instead of using it.
-
 ## Getting Started
 
 ### Prerequisites
